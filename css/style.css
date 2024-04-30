@@ -9,7 +9,7 @@
   background: radial-gradient(circle, rgba(222, 16, 16, 1) 21%, rgba(184, 6, 6, 1) 46%, rgba(204, 10, 10, 1) 93%); */
 
 body {
-  background-color: #f3f3f3;
+  background-color: #968282;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@ body {
 
 #calculo {
   width: 280px;
-  /* border-radius: 20px 20px 20px 30px; */
+  border-radius: 5px;
   height: 0px;
   padding: 5rem;
   background-color: #0b1a25;
@@ -64,7 +64,7 @@ body {
 }
 
 .buttons-container .result {
-  background-color: blue;
+  background-color: rgb(70, 70, 187);
 }
 
 .background-buttons {

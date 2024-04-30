@@ -1,5 +1,5 @@
 
-// let display = document.getElementById('display');
+let display = document.getElementById('display');
 let resultDisplay = document.getElementById('resultDisplay');
 let temporaryNumber = '';
 let SecondValue = '';
@@ -9,23 +9,21 @@ let ativo = false;
 function clean() {
   temporaryNumber = [];
   display.value = [];
-  temporaryNumber = [];
   resultDisplay.value = [];
 }
 
 function cleanLastElement() {
-  temporaryNumber = [];
-  display.value = display.value.toString().slice(0, -1);
-  temporaryNumber = display.value;
+  // temporaryNumber = [];
+  display.value = display.value.slice(0, -1);
+  // temporaryNumber = display.value;
 }
 
-
-
 function operationsMath(expressao = null) { /* é preciso adicionar um parametro nulo, para que a funçao funcione mesmo se for chamada sem um parâmetro */
-  temporaryNumber = temporaryNumber.replace(/,/g, '.');
-  let elements = temporaryNumber.match(/(\d+\.\d+|\d+|[%\+\-\x\÷\(\),])/g); /* elements é a variável que armazena cada string, cada valor. */
+  // temporaryNumber = temporaryNumber.replace(/,/g, '.');
+  let elements = display.value.match(/(\d+\.\d+|\d+|[%\+\-\x\÷\(\),])/g); /* elements é a variável que armazena cada string, cada valor. */
   console.log(elements);
-  let firstValue = Number(elements[0]); /* Armazena a primeira posição do array */
+  firstValue = Number(elements[0]); /* Armazena a primeira posição do array */
+  console.log(firstValue, 'oi');
   for (let i = 1; i < elements.length; i += 2) { /* Percorre o array incrementando e concatenando de dois em dois */
     console.log(elements);
     let temporaryNumber = elements[i]; /* Recebe o indice atual do array */
@@ -51,28 +49,27 @@ function operationsMath(expressao = null) { /* é preciso adicionar um parametro
   return firstValue;
 }
 
-function parenthesesResolution(num) {
-  temporaryNumber = num;
-  for (let i = 1; i < temporaryNumber.length; i += 2) {
-    if (temporaryNumber == '(') {
-      temporaryNumber.match(/(\d+\.\d+|\d+|[%\+\-\x\÷\(\),])/g)
-      temporaryNumber = operationsMath(temporaryNumber);
-
-    }
-  }
-}
+// function parenthesesResolution(num) {
+//   temporaryNumber = num;
+//   for (let i = 1; i < temporaryNumber.length; i += 2) {
+//     if (temporaryNumber == '(') {
+//       temporaryNumber.match(/(\d+\.\d+|\d+|[%\+\-\x\÷\(\),])/g)
+//       temporaryNumber = operationsMath(temporaryNumber);
+//     }
+//   }
+// }
 
 function hasParantese() {
   if (ativo == false) {
-    temporaryNumber += "(";
+    display.value += "(";
     ativo = true;
-    display.value = temporaryNumber;
+    // display.value += temporaryNumber;
     console.log(ativo);
   }
   else {
-    temporaryNumber += ")";
+    display.value += ")";
     ativo = false;
-    display.value = temporaryNumber;
+    // display.value += temporaryNumber;
     console.log(ativo);
   }
 }
@@ -85,8 +82,6 @@ function btnClick(num) {
     console.log(temporaryNumber, 'leo');
     display.value += num;
     guarda = display.value.match((/(\d+\.\d+|\d+|[%\+\-\x\÷\(\),])/g));
-
-    // console.log(guarda.length);
     console.log(isImpar(guarda.length, display.value));
     return;
   }
