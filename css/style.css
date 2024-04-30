@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* background: rgb(222, 16, 16);
+  background: radial-gradient(circle, rgba(222, 16, 16, 1) 21%, rgba(184, 6, 6, 1) 46%, rgba(204, 10, 10, 1) 93%); */
+
+body {
+  background-color: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+#calculo {
+  width: 280px;
+  /* border-radius: 20px 20px 20px 30px; */
+  height: 0px;
+  padding: 5rem;
+  background-color: #0b1a25;
+  color: #fffafa;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#operations {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+  overflow-wrap: break-word;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 30px;
+  min-height: 4rem;
+  display: flex;
+}
+
+#display {
+  display: flex;
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 2px;
+  color: white ;
+  background-color: #0b1a25;
+}
+
+#resultDisplay {
+  height: 40px;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: #0b1a25;
+}
+
+.buttons-container .clear {
+  background-color: purple;
+}
+
+.buttons-container .result {
+  background-color: blue;
+}
+
+.background-buttons {
+  background-color: #1d1a1a;
+  border-radius: 20px;
+}
+
+.buttons-container {
+  width: 280px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 5px;
+  padding: 10px 0px;
+}
+
+.buttons-container button {
+  border: 1px solid transparent;
+  border-radius: 100%;
+  height: 4rem;
+  width: 3.4rem;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  color: rgb(255, 255, 255);
+  background-color: #8a8585;
+  cursor: pointer;
+}
+
+.buttons-container .number {
+  background-color: #30313b67;
+}
+
+.buttons-container button:active {
+  background-color: #eaecec;
+  border-color: #999;
+}
+
+.buttons-container .numbers,
+.clear,
+.virgula {
+  background-color: #333;
+}
